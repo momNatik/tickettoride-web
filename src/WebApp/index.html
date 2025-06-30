@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket to ride</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <header class="header__container">
+                <div class="header__logo">
+                    <img class="header__logo_img" src="./img/logo.png" alt="logo">
+                    <span class="header__logo_text">Ticket To Ride</span>
+                </div>
+
+                <nav class="header__menu menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a class="menu__link __link" href="#howToPlay">How to play</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link __link" href="#rules">Rules</a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link __link" href="#"></a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link __link" href="#"></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div>
+                <svg src="map.svg"></svg>
+            </div>
+            <span id="testLabel">NO TEXT</span>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        async function onDocumentLoaded() {
+            const response = await fetch("http://localhost:3001/abc?b=123", {
+                method: "GET",
+                //mode: "no-cors", // no-cors, *cors, same-origin
+                // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: "same-origin", // include, *same-origin, omit
+                // headers: {
+                //     "Content-Type": "text/plain",
+                //     // 'Content-Type': 'application/x-www-form-urlencoded',
+                // },
+                // redirect: "follow", // manual, *follow, error
+                // referrerPolicy: "no-referrer", // no-referrer, *client
+                //body: JSON.stringify(data), // body data type must match "Content-Type" header
+            });
+
+            const responseText = await response.text();
+
+            const testLabel = document.getElementById("testLabel");
+            testLabel.innerText = responseText;
+        }
+
+        onDocumentLoaded();
+    </script>
+</body>
+
+</html>
