@@ -1,94 +1,64 @@
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
+    width: 100%;
+    height: $headerHeight + calc($mainOffset / 2);
+    padding-top: calc($mainOffset / 2);
 
-  width: 100%;
-  height: $headerHeight;
+    box-shadow: 0px 4px 4px rgba(13, 96, 111, 50%);
 
-  background: rgba(242, 120, 92, 70%);
-  box-shadow: 0px 4px 4px rgba(13, 96, 111, 50%);
-  @media (max-width: 425.98px) {
-    background: rgba(242, 120, 92, 0%);
-    box-shadow: 0px 4px 4px rgba(13, 96, 111, 0%);
-  }
-  &__container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @media (max-width: 768.98px) {
-      justify-content: space-between;
+    &__container {
+        height: $headerHeight;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    @media (max-width: 425.98px) {
-      padding-top: 30px;
+    &__logo {
+        display: flex;
+        align-items: flex-start;
+        flex: 0 1 auto;
+
+        &_img {
+            width: 40px;
+            height: 40px;
+        }
+        &_text {
+            margin-left: 6px;
+            font-family: $mainFont;
+            font-size: 32px;
+            line-height: 39px;
+            color: $fontColor;
+            transition: $standartTrans;
+            &:hover {
+                color: $secondAccentColor;
+            }
+        }
     }
-  }
-  &__logo {
-    display: flex;
-    align-items: flex-start;
-    @media (max-width: 425.98px) {
-      align-items: center;
+    &__menu {
+        margin: 0 auto;
+        flex: 1 1 auto;
     }
-    &_img {
-      width: 30px;
-      height: 30px;
-    }
-    &_text {
-      margin-left: 6px;
-      font-family: "Magra";
-      font-weight: 600;
-      font-size: 32px;
-    //   @include adaptiv-font(32, 28);
-      line-height: 39px;
-      color: #fff;
-      @media (max-width: 425.98px) {
-        display: none;
-      }
-    }
-  }
-  &__menu {
-    margin: 0 auto;
-  }
-  &__login-btn {
-    padding: 10px 30px;
-    font-family: "Red Hat Text";
-    font-weight: 500;
-    color: #fff;
-    background: $secondAccentColor;
-    border-radius: $mainRadius;
-    box-shadow: $btnBoxShadow;
-    transition: $standartTrans;
-    &:hover {
-      background: darken($secondAccentColor, 10%);
-    }
-    @media (max-width: 425.98px) {
-      display: none;
-    }
-  }
 }
 
 .menu {
-  @media (max-width: 768.98px) {
-    display: none;
-  }
-  &__list {
-    display: flex;
-  }
-//   &__item {
-//     &:not(:last-child) {
-//       @include adaptive-value("margin-right", 42, 5, 2);
-//     }
-//   }
-  &__link {
-    font-family: "Red Hat Text";
-    font-weight: 500;
-    line-height: 21px;
-    color: #fff;
-    // @include adaptiv-font(16, 13);
-    transition: $standartTrans;
-    &:hover {
-      color: $secondAccentColor;
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
-  }
+    &__link {
+        font-family: $mainFont;
+        line-height: 21px;
+        color: $fontColor;
+        font-size: 16px;
+        transition: $standartTrans;
+        &:hover {
+            color: $secondAccentColor;
+        }
+        &__play_now {
+            border: 1px solid $fontColor;
+            border-radius: 10px;
+            box-shadow: $btnBoxShadow;
+            padding: 5px;
+            font-size: 26px;
+        }
+    }
 }
