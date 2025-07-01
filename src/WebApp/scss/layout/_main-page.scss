@@ -1,0 +1,29 @@
+.main-page {
+    height: 1000px;
+    width: 100%;
+    background-image: url("../img/main-page-img-3.png"), url("../img/main-page-img-2.png"),
+        url("../img/main-page-img-1.png"), url("../img/main-page-img-0.png");
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: bottom, bottom, bottom, center;
+    // background-size: auto, auto, auto, auto;
+    &__container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__text {
+        &__title {
+            font-family: $mainFont;
+            color: $fontColor;
+            font-size: 198px;
+            text-align: center;
+        }
+        &__subtitle {
+            font-family: $mainFont;
+            color: $fontColor;
+            font-size: 142px;
+            text-align: end;
+        }
+    }
+}
