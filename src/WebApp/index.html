@@ -16,7 +16,6 @@
                     <img class="header__logo_img" src="./img/logo.png" alt="logo">
                     <span class="header__logo_text">Ticket To Ride</span>
                 </div>
-
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__item menu__item__play_now">
@@ -33,20 +32,59 @@
             </div>
         </header>
         <div class="main-page">
+            <div class="main-page__gradient"></div>
             <div class="main-page__container">
                 <div class="main-page__text">
                     <h1 class="main-page__text__title">TICKET TO RIDE</h1>
                     <h2 class="main-page__text__subtitle">CURIOTIK</h2>
                 </div>
 
+                <div class="main-page__choose-game">
+                    <span class="main-page__choose-game__title">CHOOSE YOUR GAME</span>
+                    <form action="#" method="post" class="main-page__choose-game__form choose-game__form">
+                        <div class="choose-game__form__number-of-players">
+                            <fieldset>
+                                <legend>Number of players</legend>
+                                <label for="2">2</label>
+                                <input type="radio" name="number-of-players" id="2" value="2">
+                                <label for="3">3</label>
+                                <input type="radio" name="number-of-players" id="3" value="3">
+                                <label for="4">4</label>
+                                <input type="radio" name="number-of-players" id="4" value="4">
+                                <label for="5">5</label>
+                                <input type="radio" name="number-of-players" id="5" value="5">
+                            </fieldset>
+                        </div>
+                        <div class="choose-game__form__number-of-cities">
+                            <label class="choose-game__form__number-of-cities__label" for="number-of-cities">Cities
+                                count</label>
+                            <input class="choose-game__form__number-of-cities__input" type="number"
+                                name="number-of-cities" id="number-of-cities" placeholder="from 30 to 50" value="">
+                        </div>
+
+                        <div class="choose-game__form__play-with-computer">
+                            <label for="play-with-computer">Play with computer</label>
+                            <input type="checkbox" name="play-with-computer" id="play-with-computer" value="">
+                        </div>
+
+                        <div class="choose-game__form__btn">
+                            <input class="choose-game__form__btn__input" type="submit" value="PLAY">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+
         <div>
             <svg src="map.svg"></svg>
         </div>
         <span id="testLabel">NO TEXT</span>
     </div>
-    <script src="js/script.js"></script>
+
+    <form action="#" method="get">
+        <input type="text" name="test" id="test">
+    </form>
+    <!-- <script src="js/script.js"></script>
     <script>
         async function onDocumentLoaded() {
             const response = await fetch("http://localhost:3001/abc?b=123", {
@@ -70,7 +108,7 @@
         }
 
         onDocumentLoaded();
-    </script>
+    </script> -->
 </body>
 
 </html>
