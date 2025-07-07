@@ -122,6 +122,9 @@
             border-radius: 100px;
             box-shadow: $btnBoxShadow;
             border: 0;
-        }
+            
+        }:disabled {
+                background-color: grey;
+            }
     }
 }

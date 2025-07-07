@@ -41,12 +41,13 @@
 
                 <div class="main-page__choose-game">
                     <span class="main-page__choose-game__title">CHOOSE YOUR GAME</span>
-                    <form action="#" method="post" class="main-page__choose-game__form choose-game__form">
+                    <form action="play.html" method="post" class="main-page__choose-game__form choose-game__form"
+                        id="choose-game__form">
                         <div class="choose-game__form__number-of-players">
                             <fieldset>
                                 <legend>Number of players</legend>
                                 <label for="2">2</label>
-                                <input type="radio" name="number-of-players" id="2" value="2">
+                                <input type="radio" name="number-of-players" id="2" value="2" required>
                                 <label for="3">3</label>
                                 <input type="radio" name="number-of-players" id="3" value="3">
                                 <label for="4">4</label>
@@ -59,7 +60,8 @@
                             <label class="choose-game__form__number-of-cities__label" for="number-of-cities">Cities
                                 count</label>
                             <input class="choose-game__form__number-of-cities__input" type="number"
-                                name="number-of-cities" id="number-of-cities" placeholder="from 30 to 50" value="">
+                                name="number-of-cities" id="number-of-cities" placeholder="from 30 to 50" value=""
+                                required>
                         </div>
 
                         <div class="choose-game__form__play-with-computer">
@@ -68,8 +70,9 @@
                         </div>
 
                         <div class="choose-game__form__btn">
-                            <input class="choose-game__form__btn__input" type="submit" value="PLAY">
+                            <input class="choose-game__form__btn__input" type="submit" value="PLAY" disabled>
                         </div>
+                        <!-- <div id="loader" class="hidden">Loading...</div> -->
                     </form>
                 </div>
             </div>
@@ -81,11 +84,8 @@
         <span id="testLabel">NO TEXT</span>
     </div>
 
-    <form action="#" method="get">
-        <input type="text" name="test" id="test">
-    </form>
-    <!-- <script src="js/script.js"></script>
-    <script>
+    <script src="js/script.js"></script>
+    <!-- <script>
         async function onDocumentLoaded() {
             const response = await fetch("http://localhost:3001/abc?b=123", {
                 method: "GET",
