@@ -4,17 +4,16 @@ import cors from "cors";
 
 const hostname = "127.0.0.1";
 const port = 3001;
-// const corsOptions = {
-//   origin: ["http://localhost:5500"],
-// };
+const corsOptions = {
+  origin: ["http://localhost:3000"],
+};
 
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/gamestatus/:id", async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "text/plain");
   const id = req.params.id;
   const isReady = Math.random() * 10 < 1;
