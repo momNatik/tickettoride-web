@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "server": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "node --watch index.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,8 +13,5 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
   }
 }

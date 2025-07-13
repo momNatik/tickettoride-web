@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "server": "node host.js",
-    "dev": "nodemon host.js"
+    "dev": "node --watch host.js"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +14,5 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
-  },
-   "devDependencies": {
-    "nodemon": "^3.0.1"
   }
 }
