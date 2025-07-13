@@ -1,4 +1,3 @@
-// import { createServer } from "node:http";
 import express from "express";
 // import crypto from "crypto";
 import cors from "cors";
@@ -24,20 +23,5 @@ app.get("/gamestatus/:id", async (req, res) => {
 
 app.listen(port, () => console.log("Сервер ожидает подключения..."));
 
-// const server = createServer(onRequest);
-// server.listen(port, hostname, onServerStart);
-
-// function onRequest(req, res) {
-//   res.statusCode = 200;
-//   res.setHeader("Content-Type", "text/plain");
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-
 //   const gameId = crypto.randomUUID();
-
-//   // res.end(isReady.toString());
 //   res.end(gameId);
-// }
-
-// function onServerStart() {
-//   console.log(`Server running at http://${hostname}:${port}/`);
-// }

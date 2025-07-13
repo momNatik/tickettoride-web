@@ -1,15 +1,21 @@
 {
   "name": "webapp",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "host.js",
   "private": true,
-  "proxy": "http://localhost:3001",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "node host.js",
+    "dev": "nodemon host.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+   "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
