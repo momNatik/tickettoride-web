@@ -5,8 +5,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "server": "node host.js",
-    "dev": "node --watch host.js"
+    "server": "node --env-file=.env host.js",
+    "dev": "node --watch --env-file=.env host.js"
   },
   "keywords": [],
   "author": "",

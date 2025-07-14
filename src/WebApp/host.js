@@ -5,7 +5,7 @@ import { handlePostPlay } from "./js/play.mjs";
 const __dirname = import.meta.dirname;
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 const __wwwroot = path.join(__dirname, "wwwroot");
 
 
