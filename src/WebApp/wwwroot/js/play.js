@@ -35,8 +35,4 @@ function initGame(gameId) {
     mapBackgroundImage.src = `gameresources/${gameId}/mapbackgroundimage`;
 }
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const gameId = urlParams.get('id');
-
-checkGameResourcesStatus(gameId);
+checkGameResourcesStatus(__gameId);
