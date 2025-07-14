@@ -153,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-page {
   position: relative;
-  height: 900px;
+  height: 800px;
   width: 100%;
   background-image: url("../img/main-page-img-1.png"), url("../img/main-page-img-0.png");
   background-repeat: no-repeat, no-repeat;
@@ -209,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-page__text__title {
   font-family: "Forum", serif;
   color: #fcfcfc;
-  font-size: 198px;
+  font-size: 182px;
   text-align: center;
 }
 .main-page__text__subtitle {

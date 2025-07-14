@@ -1,6 +1,6 @@
 .main-page {
     position: relative;
-    height: 900px;
+    height: 800px;
     width: 100%;
     background-image: url("../img/main-page-img-1.png"), url("../img/main-page-img-0.png");
     background-repeat: no-repeat, no-repeat;
@@ -54,7 +54,7 @@
         &__title {
             font-family: $mainFont;
             color: #fcfcfc;
-            font-size: 198px;
+            font-size: 182px;
             text-align: center;
         }
         &__subtitle {
