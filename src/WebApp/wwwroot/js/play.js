@@ -31,7 +31,7 @@ async function checkGameResourcesStatus(gameId) {
 }
 
 function initGame(gameId) {
-    const mapBackgroundImage = getElementById('mapBackgroundImage');
+    const mapBackgroundImage = document.getElementById('mapBackgroundImage');
     mapBackgroundImage.src = `gameresources/${gameId}/mapbackgroundimage`;
 }
 
