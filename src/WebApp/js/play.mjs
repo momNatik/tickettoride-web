@@ -2,7 +2,7 @@ export function handlePostPlay(req, res) {
   const params = req.body;
   const gameId = initGame(params);
 
-  res.redirect(`play.html?id=${gameId}`);
+  res.redirect(`game/${gameId}`);
 }
 
 function initGame(params) {

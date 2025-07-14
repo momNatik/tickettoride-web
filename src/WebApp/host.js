@@ -13,7 +13,16 @@ const urlencodedParser = express.urlencoded({extended: false});
 
 app.use(express.static(__wwwroot));
 
+
 app.post("/play.html", urlencodedParser, handlePostPlay);
+app.get("/game/:id", (req, res) => {
+  res.sendFile(`${__wwwroot}/game.html`, (err) => {
+    if (err) {
+      console.log(err);
+      res.end(err.message);
+    }
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
