@@ -1,4 +1,5 @@
-const gameApi = "http://127.0.0.1:3001"
+//const gameApi = process.env.API_URL;
+const gameApi = "http://localhost:3001";
 
 async function queueCheckGameResourcesStatus(gameId) {
   const statuseCheckPeriod = 1000;
@@ -36,6 +37,6 @@ function initGame(gameId) {
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const productName = urlParams.get('product');
+const gameId = urlParams.get('id');
 
-checkGameResourcesStatus('abd');
+checkGameResourcesStatus(gameId);

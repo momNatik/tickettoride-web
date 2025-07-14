@@ -9,7 +9,6 @@ const port = process.env.PORT;
 const __wwwroot = path.join(__dirname, "wwwroot");
 
 
-
 const urlencodedParser = express.urlencoded({extended: false});
 
 app.use(express.static(__wwwroot));
@@ -22,3 +21,4 @@ app.listen(port, () => {
 
 
 console.log("dirname == " + __dirname);
+console.log(`port = ${port}`);
