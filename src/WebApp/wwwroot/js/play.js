@@ -1,5 +1,4 @@
-//const gameApi = process.env.API_URL;
-const gameApi = "http://localhost:3001";
+const MapBackgroundImageResourceId = 'mapBackgroundImage';
 
 async function queueCheckGameResourcesStatus(gameId) {
   const statuseCheckPeriod = 1000;
@@ -8,7 +7,7 @@ async function queueCheckGameResourcesStatus(gameId) {
 }
 
 async function checkGameResourcesStatus(gameId) {
-  let response = await fetch(`${gameApi}/gamestatus/${gameId}`);
+  let response = await fetch(`${__gameApiUrl}/gamestatus/${gameId}`);
 
   if (response.status === 200) {
     const body = await response.json();
@@ -32,7 +31,7 @@ async function checkGameResourcesStatus(gameId) {
 
 function initGame(gameId) {
     const mapBackgroundImage = document.getElementById('mapBackgroundImage');
-    mapBackgroundImage.src = `gameresources/${gameId}/mapbackgroundimage`;
+    mapBackgroundImage.src = `${__gameApiUrl}/games/${gameId}/resources/${MapBackgroundImageResourceId}`;
 }
 
 checkGameResourcesStatus(__gameId);
