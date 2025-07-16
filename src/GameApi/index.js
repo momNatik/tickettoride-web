@@ -1,9 +1,8 @@
 import express from "express";
-// import crypto from "crypto";
 import cors from "cors";
 
 const hostname = "127.0.0.1";
-const port = 3001;
+const port = process.env.PORT;
 const corsOptions = {
   origin: ["http://localhost:3000"],
 };
@@ -20,7 +19,4 @@ app.get("/gamestatus/:id", async (req, res) => {
   res.end(isReady.toString());
 });
 
-app.listen(port, () => console.log("Сервер ожидает подключения..."));
-
-//   const gameId = crypto.randomUUID();
-//   res.end(gameId);
+app.listen(port, () => console.log("Game API waiting for connections..."));
