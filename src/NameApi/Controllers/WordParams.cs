@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 
-namespace NameApi.Controllers
+namespace WordsGeneratorApi.Controllers
 {
     public class WordParams : IValidatableObject
     {

@@ -1,5 +1,5 @@
 
-namespace NameApi
+namespace WordsGeneratorApi
 {
     public class Program
     {

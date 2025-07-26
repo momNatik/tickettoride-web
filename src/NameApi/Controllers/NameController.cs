@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace NameApi.Controllers
+namespace WordsGeneratorApi.Controllers
 {
     [ApiController]
     [Route("name")]
