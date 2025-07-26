@@ -1,6 +1,6 @@
 @WordsGeneratorApi_HostAddress = http://localhost:5230
 
-GET {{WordsGeneratorApi_HostAddress}}/weatherforecast/
+GET {{WordsGeneratorApi_HostAddress}}/name?min=4&max=7
 Accept: application/json
 
 ###
