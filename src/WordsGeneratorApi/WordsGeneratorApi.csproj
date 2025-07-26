@@ -7,7 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Libs\WordsGenerator.deps.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Libs\WordsGenerator.deps.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WordsGenerator">
+      <HintPath>Libs\WordsGenerator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\russia-cities.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\words-generator-dictionary.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

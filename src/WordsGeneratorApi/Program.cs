@@ -14,6 +14,8 @@ namespace WordsGeneratorApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddSingleton<IWordsGenerator, WordsGeneratorWrapper>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

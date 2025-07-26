@@ -1,6 +1,6 @@
 @WordsGeneratorApi_HostAddress = http://localhost:5230
 
-GET {{WordsGeneratorApi_HostAddress}}/name?min=4&max=7
+GET {{WordsGeneratorApi_HostAddress}}/name?min=5&max=10&b=ната
 Accept: application/json
 
 ###

@@ -8,13 +8,15 @@ namespace WordsGeneratorApi.Controllers
         [FromQuery(Name = "min")]
         [Required]
         [Range(4, 10)]
-
         public int MinLength { get; set; }
 
         [FromQuery(Name = "max")]
         [Required]
         [Range(4, 10)]
         public int MaxLength { get; set; }
+
+        [FromQuery(Name = "b")]
+        public string BeginWith { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
