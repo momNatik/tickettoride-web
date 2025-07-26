@@ -125,6 +125,9 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# Stores VSCode cash
+.vs
+
 # yarn v3
 .pnp.*
 .yarn/*
@@ -137,3 +140,15 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+
+# Custom resources
+
+file_store/*
+
+# VS bin, obj
+
+**/bin/
+**/obj/
+
+*.csproj.user
