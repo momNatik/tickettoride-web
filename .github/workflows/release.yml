@@ -18,16 +18,12 @@ jobs:
       run: |
         git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
         git branch --remote --contains | grep origin/main
-    - name: Checkout Submodule
-      uses: actions/checkout@v4
-      with:
-        repository: Daos16/Uni.Dyslexia.Api
-        path: .
-        token: ${{ secrets.ACCESS_TOKEN }}
     - name: Set VERSION variable from tag
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}
+      env:
+        DAOS16_NUGET_KEY: ${{ secrets.DAOS16_NUGET_KEY }}
     - name: Test
       run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
     - name: Pack
