@@ -18,11 +18,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Checkout Submodule
-        uses: actions/checkout@v4
-        with:
-          repository: Daos16/Uni.Dyslexia.Api
-          path: .
-          token: ${{ secrets.ACCESS_TOKEN }}
+      uses: actions/checkout@v4
+      with:
+        repository: Daos16/Uni.Dyslexia.Api
+        path: .
+        token: ${{ secrets.ACCESS_TOKEN }}
     - name: Build
       run: dotnet build --configuration Release
     - name: Test
