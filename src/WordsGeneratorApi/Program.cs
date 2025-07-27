@@ -21,8 +21,6 @@ namespace WordsGeneratorApi
                 return new FileDictionaryProvider(@"Resources\{id}.edc");
             });
 
-            builder.Services.AddSingleton<IWordsGenerator, WordsGeneratorWrapper>();
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

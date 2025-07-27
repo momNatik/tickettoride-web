@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Libs\WordsGenerator.deps.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Libs\WordsGenerator.deps.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="Uni.Dyslexia.Api" Version="1.0.0" />
   </ItemGroup>
