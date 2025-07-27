@@ -10,7 +10,7 @@ jobs:
     timeout-minutes: 15
     defaults:
       run:
-        working-directory: src
+        working-directory: src/WordsGeneratorApi
     steps:
     - name: Checkout
       uses: actions/checkout@v4
