@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Uni.Dyslexia.Api" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,10 +26,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resources\russia-cities.txt">
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\russia-cities.edc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Resources\words-generator-dictionary.txt">
+    <None Update="Resources\russia-nouns.edc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

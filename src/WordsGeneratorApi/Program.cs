@@ -1,4 +1,6 @@
 
+using Dyslexia.Api;
+
 namespace WordsGeneratorApi
 {
     public class Program
@@ -13,6 +15,11 @@ namespace WordsGeneratorApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSingleton<IDictionaryProvider, FileDictionaryProvider>(serviceProvider =>
+            {
+                return new FileDictionaryProvider(@"Resources\{id}.edc");
+            });
 
             builder.Services.AddSingleton<IWordsGenerator, WordsGeneratorWrapper>();
 

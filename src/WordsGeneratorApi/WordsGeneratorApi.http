@@ -1,6 +1,6 @@
-@WordsGeneratorApi_HostAddress = http://localhost:5230
+@Dyslexia.Api.Test_HostAddress = https://localhost:7152
 
-GET {{WordsGeneratorApi_HostAddress}}/name?min=5&max=10&b=ната
+GET {{Dyslexia.Api.Test_HostAddress}}/dyslexia/words?dic=russia-cities&min=5&max=10
 Accept: application/json
 
 ###
