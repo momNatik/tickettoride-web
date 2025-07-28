@@ -1,6 +1,0 @@
-@Dyslexia.Api.Test_HostAddress = https://localhost:7245
-
-GET {{Dyslexia.Api.Test_HostAddress}}/dyslexia/words?dic=russia-cities&min=5&max=10
-Accept: application/json
-
-###
