@@ -5,8 +5,8 @@ import { handlePostPlay } from "./js/play.mjs";
 const __dirname = import.meta.dirname;
 const __wwwroot = path.join(__dirname, "wwwroot");
 
-const port = process.env.PORT;
-const apiUrl = process.env.GAME_API_URL;
+const port = process.env.WEB_PORT;
+const apiUrl = process.env.API_URL;
 
 const app = express();
 
@@ -29,5 +29,5 @@ app.listen(port, () => {
 });
 
 console.log("dirname: " + __dirname);
-console.log(`PORT: ${port}`);
-console.log(`GAME_API_URL: ${apiUrl}`);
+console.log(`WEB_PORT: ${port}`);
+console.log(`API_URL: ${apiUrl}`);

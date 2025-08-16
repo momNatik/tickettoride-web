@@ -4,8 +4,8 @@
   "main": "host.js",
   "type": "module",
   "scripts": {
-    "server": "node --env-file=.env host.js",
-    "dev": "node --watch --env-file=.env host.js"
+    "server": "node --env-file=../../.env host.js",
+    "dev": "node --watch --env-file=../../.env host.js"
   },
   "keywords": [],
   "author": "",
