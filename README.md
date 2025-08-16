@@ -26,3 +26,7 @@
 # Others
 
 'Procfile' required for AWS deployment.
+
+# Technical
+
+[.env](https://momnatik.atlassian.net/wiki/x/AgAy)
