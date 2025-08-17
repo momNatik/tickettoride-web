@@ -7,7 +7,7 @@ async function queueCheckGameResourcesStatus(gameId) {
 }
 
 async function checkGameResourcesStatus(gameId) {
-  let response = await fetch(`${__gameApiUrl}/gamestatus/${gameId}`);
+  let response = await fetch(`${__gameApiUrl}/games/${gameId}/status`);
 
   if (response.status === 200) {
     const body = await response.json();
