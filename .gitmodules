@@ -1,0 +1,3 @@
+[submodule "tickettoride-backend-common"]
+	path = tickettoride-backend-common
+	url = https://github.com/momNatik/tickettoride-backend-common.git
