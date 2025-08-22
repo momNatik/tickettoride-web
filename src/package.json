@@ -1,11 +1,11 @@
 {
   "name": "webapp",
   "version": "1.0.0",
-  "main": "host.js",
+  "main": "index.mjs",
   "type": "module",
   "scripts": {
-    "server": "node --env-file=../../.env host.js",
-    "dev": "node --watch --env-file=../../.env host.js"
+    "server": "node --env-file=../../.env index.mjs",
+    "dev": "node --watch --env-file=../../.env index.mjs"
   },
   "keywords": [],
   "author": "",
