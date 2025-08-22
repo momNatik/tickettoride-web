@@ -1,6 +1,9 @@
 import express from "express";
 import path from "path";
 import { handlePostPlay } from "./js/play.mjs";
+import LOGGING from "../tickettoride-backend-common/src/logging/log.mjs";
+
+LOGGING.ShowStartInfo("WEB_NAME");
 
 const __dirname = import.meta.dirname;
 const __wwwroot = path.join(__dirname, "wwwroot");
