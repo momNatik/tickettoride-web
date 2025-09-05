@@ -1,4 +1,4 @@
-const MapBackgroundImageResourceId = 'mapBackgroundImage';
+const MapBackgroundImageResourceId = 'background';
 
 async function queueCheckGameResourcesStatus(gameId) {
   const statuseCheckPeriod = 1000;
@@ -31,7 +31,7 @@ async function checkGameResourcesStatus(gameId) {
 
 function initGame(gameId) {
     const mapBackgroundImage = document.getElementById('mapBackgroundImage');
-    mapBackgroundImage.src = `${__gameApiUrl}/games/${gameId}/resources/${MapBackgroundImageResourceId}`;
+    mapBackgroundImage.src = `${__gameApiUrl}/games/${gameId}/maps/${MapBackgroundImageResourceId}`;
 }
 
 checkGameResourcesStatus(__gameId);
