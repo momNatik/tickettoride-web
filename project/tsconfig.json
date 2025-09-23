@@ -1,0 +1,19 @@
+{
+  "extends": "../../tickettoride/tsconfig.json",
+  "compilerOptions": {
+
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // paths aliases
+    "baseUrl": "./src",
+    "paths": {
+      "@common/*": ["../../../tickettoride-backend-common/project/src/*"]
+    }
+  },
+  "references": [
+    {
+      "path": "../../tickettoride-backend-common/project"
+    }
+  ]
+}
