@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
-import { handlePostPlay } from "./js/play.mjs";
-import LOGGING from "../tickettoride-backend-common/src/logging/log.mjs";
+import { handlePostPlay } from "./js/play.js";
+import LOGGING from "@common/logging/log.js";
 
 LOGGING.ShowStartInfo("WEB_NAME");
 

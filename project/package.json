@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "server": "node --env-file=../../.env index.mjs",
-    "dev": "node --watch --env-file=../../.env index.mjs"
+    "dev": "node --watch --env-file=../../.env index.mjs",
+    "exec": "tsc --build && node --loader=ts-paths-esm-loader --env-file=../../.env --no-warnings dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,12 @@
   "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "ts-paths-esm-loader": "^1.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   }
 }
