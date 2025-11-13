@@ -17,7 +17,7 @@ const app = express();
 const urlencodedParser = express.urlencoded({ extended: false });
 
 app.set("view engine", "ejs");
-app.set("views", "./wwwroot");
+app.set("views", "./views");
 
 app.use(express.static(__wwwroot));
 
@@ -34,7 +34,7 @@ app.get("/game/:id", async (req, res) => {
   });
   console.log(`Init game requested.`);
 
-  res.render("game.ejs", { gameId });
+  res.render("game", { gameId });
 });
 
 app.listen(port, () => {

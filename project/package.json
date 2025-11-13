@@ -4,9 +4,13 @@
   "main": "index.mjs",
   "type": "module",
   "scripts": {
+    "copy-wwwroot": "copyfiles -u 1 src/wwwroot/**/* dist/",
+    "copy-views": "copyfiles -u 1 src/views/**/* dist/",
     "server": "node --env-file=../../.env index.mjs",
     "dev": "node --watch --env-file=../../.env index.mjs",
-    "exec": "tsc --build && node --loader=ts-paths-esm-loader --env-file=../../.env --no-warnings dist/index.js"
+    "build": "tsc --build",
+    "start": "node --loader=ts-paths-esm-loader --env-file=../../.env --no-warnings dist/index.js",
+    "exec": "npm run build && npm run copy-wwwroot && npm run copy-views && npm run start"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +23,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.3.1",
+    "copyfiles": "^2.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
