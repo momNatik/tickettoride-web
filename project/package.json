@@ -1,7 +1,7 @@
 {
   "name": "webapp",
   "version": "1.0.0",
-  "main": "index.mjs",
+  "main": "index.ts",
   "type": "module",
   "scripts": {
     "copy-wwwroot": "copyfiles -u 1 src/wwwroot/**/* dist/",

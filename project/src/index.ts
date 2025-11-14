@@ -7,6 +7,7 @@ LOGGING.ShowStartInfo("WEB_NAME");
 
 const __dirname = import.meta.dirname;
 const __wwwroot = path.join(__dirname, "wwwroot");
+const __views = path.join(__dirname, "views");
 
 const port = process.env.WEB_PORT;
 const apiUrl = process.env.API_URL;
@@ -17,7 +18,7 @@ const app = express();
 const urlencodedParser = express.urlencoded({ extended: false });
 
 app.set("view engine", "ejs");
-app.set("views", "./views");
+app.set("views", __views);
 
 app.use(express.static(__wwwroot));
 
