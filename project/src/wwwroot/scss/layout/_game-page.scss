@@ -1,0 +1,18 @@
+.map {
+    width: 1024px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+}
+
+#mapBackgroundImage, #mapTopology {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#mapTopology {
+    z-index: 2;
+}
