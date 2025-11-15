@@ -1,4 +1,5 @@
 const MapBackgroundImageResourceId = 'background';
+const MapTopologyResourceId = 'topology';
 
 async function queueCheckGameResourcesStatus(gameId) {
   const statuseCheckPeriod = 1000;
@@ -30,8 +31,13 @@ async function checkGameResourcesStatus(gameId) {
 }
 
 function initGame(gameId) {
-    const mapBackgroundImage = document.getElementById('mapBackgroundImage');
-    mapBackgroundImage.src = `${__gameApiUrl}/games/${gameId}/maps/${MapBackgroundImageResourceId}`;
+    setSrcToMapResourceId('mapBackgroundImage', gameId, MapBackgroundImageResourceId);
+    setSrcToMapResourceId('mapTopology', gameId, MapTopologyResourceId);
+}
+
+function setSrcToMapResourceId(elementId, gameId, mapResourceId) {
+    const element = document.getElementById(elementId);
+    element.src = `${__gameApiUrl}/games/${gameId}/maps/${mapResourceId}`;
 }
 
 checkGameResourcesStatus(__gameId);
