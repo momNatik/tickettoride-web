@@ -1,4 +1,4 @@
-const MapBackgroundImageResourceId = 'background';
+const MapLandscapeImageResourceId = 'landscape';
 const MapTopologyResourceId = 'topology';
 
 async function queueCheckGameResourcesStatus(gameId) {
@@ -31,7 +31,7 @@ async function checkGameResourcesStatus(gameId) {
 }
 
 function initGame(gameId) {
-    setSrcToMapResourceId('mapBackgroundImage', gameId, MapBackgroundImageResourceId);
+    setSrcToMapResourceId('mapLandscapeImage', gameId, MapLandscapeImageResourceId);
     setSrcToMapResourceId('mapTopology', gameId, MapTopologyResourceId);
 }
 
