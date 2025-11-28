@@ -38,13 +38,13 @@ app.get("/game/:id", async (req, res) => {
   const params = req.session.gameParams;
 
   console.log(`Call init game '${gameId}'`);
-  console.log(`Params '${JSON.stringify(params)}'`);
 
   await fetch(`${gameApiUrl}/${gameId}/init`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify(params)
   });
   console.log(`Init game requested.`);
 
