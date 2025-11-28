@@ -1,6 +1,7 @@
 export function handlePostPlay(req, res) {
   const params = req.body;
   const gameId = initGame(params);
+  req.session.gameParams = params;
 
   res.redirect(`game/${gameId}`);
 }
@@ -59,7 +60,7 @@ function convertIntToNumberOfBase(digits, value) {
 
   let reminder = value;
   let result = "";
-  
+
   while (reminder > 0) {
     const fraction = reminder % base;
     const digit = digits.charAt(fraction);
