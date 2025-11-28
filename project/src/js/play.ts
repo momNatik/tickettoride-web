@@ -17,6 +17,7 @@ function initGame(params) {
 }
 
 function generateGameId(digitsCount) {
+  // TODO: check id not exist 
   const gameIdDigits =
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -75,4 +76,5 @@ function convertIntToNumberOfBase(digits, value) {
 
 function startCreateGameResource(gameId) {
   console.log(`Creating game resources for game ${gameId}`);
+  // TODO: move fetch init here - await fetch(`${gameApiUrl}/${gameId}/init`
 }
