@@ -1,3 +1,5 @@
+const GAME_ID_CHARS_COUNT = 4;
+
 export function handlePostPlay(req, res) {
   const params = req.body;
   const gameId = initGame(params);
@@ -9,20 +11,20 @@ export function handlePostPlay(req, res) {
 function initGame(params) {
   console.log(`Players count: ${params["number-of-players"]}`);
 
-  const gameId = generateGameId(4);
+  const gameId = generateGameId(GAME_ID_CHARS_COUNT);
 
-  startCreateGameResource(gameId);
+  startCreateGameResourceAsync(gameId, params);
 
   return gameId;
 }
 
-function generateGameId(digitsCount) {
+function generateGameId(charsCount) {
   // TODO: check id not exist 
-  const gameIdDigits =
+  const gameIdChars =
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  const idChars = [...generateRandomDigits(gameIdDigits, digitsCount)];
-  const checkSum = calcCheckSum(gameIdDigits, idChars);
+  const idChars = [...generateRandomChars(gameIdChars, charsCount)];
+  const checkSum = calcCheckSum(gameIdChars, idChars);
   const id = idChars.join('');
 
   const id0 = id.slice(0, 1);
@@ -37,36 +39,36 @@ function generateGameId(digitsCount) {
   return gameId;
 }
 
-function* generateRandomDigits(digits, digitsCount) {
-  for (let i = 0; i < digitsCount; i++) {
-    const digitIndex = Math.trunc(Math.random() * digits.length);
-    const digit = digits.charAt(digitIndex);
+function* generateRandomChars(chars, charsCount) {
+  for (let i = 0; i < charsCount; i++) {
+    const charIndex = Math.trunc(Math.random() * chars.length);
+    const char = chars.charAt(charIndex);
 
-    yield digit;
+    yield char;
   }
 }
 
-function calcCheckSum(digits, number) {
-  const sum = number.reduce((acc, item) => acc + digits.indexOf(item), 0);
+function calcCheckSum(chars, number) {
+  const sum = number.reduce((acc, item) => acc + chars.indexOf(item), 0);
 
   console.log(`CheckSum=${sum}`);
 
-  const result = convertIntToNumberOfBase(digits, sum);
+  const result = convertIntToNumberOfBase(chars, sum);
 
   return result;
 }
 
-function convertIntToNumberOfBase(digits, value) {
-  const base = digits.length;
+function convertIntToNumberOfBase(chars, value) {
+  const base = chars.length;
 
   let reminder = value;
   let result = "";
 
   while (reminder > 0) {
     const fraction = reminder % base;
-    const digit = digits.charAt(fraction);
+    const char = chars.charAt(fraction);
 
-    result = digit + result;
+    result = char + result;
 
     reminder = (reminder - fraction) / base;
   }
@@ -74,7 +76,17 @@ function convertIntToNumberOfBase(digits, value) {
   return result;
 }
 
-function startCreateGameResource(gameId) {
+async function startCreateGameResourceAsync(gameId, params) {
   console.log(`Creating game resources for game ${gameId}`);
-  // TODO: move fetch init here - await fetch(`${gameApiUrl}/${gameId}/init`
+
+  const gameApiUrl = process.env.GAME_API_URL;
+
+  await fetch(`${gameApiUrl}/${gameId}/init`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(params)
+  });
+  console.log(`Init game requested.`);
 }
