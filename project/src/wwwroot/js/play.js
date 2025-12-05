@@ -4,6 +4,7 @@ const MapTopologyResourceId = 'topology';
 async function queueCheckGameResourcesStatus(gameId) {
   const statuseCheckPeriod = 1000;
   await new Promise((_) => setTimeout(_, statuseCheckPeriod));
+  // DEBUG: avoid of recurcion
   await checkGameResourcesStatus(gameId);
 }
 
@@ -23,7 +24,8 @@ async function checkGameResourcesStatus(gameId) {
   }
 
   if (response.status === 502) {
-    await checkGameResourcesStatus();
+    // DEBUG: check it
+    await checkGameResourcesStatus(gameId);
     return;
   }
 
