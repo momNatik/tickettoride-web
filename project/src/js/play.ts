@@ -1,19 +1,18 @@
 const GAME_ID_CHARS_COUNT = 4;
 
-export function handlePostPlay(req, res) {
+export async function handlePostPlayAsync(req, res) {
   const params = req.body;
-  const gameId = initGame(params);
-  req.session.gameParams = params;
+  const gameId = await initGameAsync(params);
 
   res.redirect(`game/${gameId}`);
 }
 
-function initGame(params) {
+async function initGameAsync(params) {
   console.log(`Players count: ${params["number-of-players"]}`);
 
   const gameId = generateGameId(GAME_ID_CHARS_COUNT);
 
-  startCreateGameResourceAsync(gameId, params);
+  await startCreateGameResourceAsync(gameId, params);
 
   return gameId;
 }
@@ -86,7 +85,9 @@ async function startCreateGameResourceAsync(gameId, params) {
     headers: {
       "Content-Type": "application/json",
     },
+    // DEBUG: check if stringify requied
     body: JSON.stringify(params)
   });
+
   console.log(`Init game requested.`);
 }
